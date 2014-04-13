@@ -1,0 +1,16 @@
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\SF4BoxViewerDX.exe.config
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\obj\Debug\SF4BoxViewerDX.csprojResolveAssemblyReference.cache
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\obj\Debug\SF4BoxViewerDX.Properties.Resources.resources
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\obj\Debug\SF4BoxViewerDX.csproj.GenerateResource.Cache
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\SF4BoxViewerDX.exe
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\SF4BoxViewerDX.pdb
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\obj\Debug\SF4BoxViewerDX.Form1.resources
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\obj\Debug\SF4BoxViewerDX.exe
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\obj\Debug\SF4BoxViewerDX.pdb
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\MemoryEditor.dll
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\SlimDX.dll
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\MemoryEditor.pdb
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\SlimDX.pdb
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\SlimDX.xml
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\obj\Debug\SF4BoxViewerDX.settingsForm.resources
+C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\obj\Debug\SF4BoxViewerDX.about.resources
