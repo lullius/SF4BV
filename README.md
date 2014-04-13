@@ -8,4 +8,4 @@ Credits: KryziK for the memory editor (bugfixes by Lullius), and SlimDX. Recruit
 Homepage: http://github.com/lullius/SF4BV or www.slitherware.com
 
 This project is aiming for 100% accurate box-view in Street Fighter 4.
-Still a work in process.
+Still a WIP.
