@@ -9,7 +9,6 @@ C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxView
 C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\obj\Debug\SF4BoxViewerDX.pdb
 C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\MemoryEditor.dll
 C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\SlimDX.dll
-C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\MemoryEditor.pdb
 C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\SlimDX.pdb
 C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\bin\Debug\SlimDX.xml
 C:\Users\Raymond\Documents\Visual Studio 2012\Projects\SF4BoxViewerDX\SF4BoxViewerDX\obj\Debug\SF4BoxViewerDX.settingsForm.resources

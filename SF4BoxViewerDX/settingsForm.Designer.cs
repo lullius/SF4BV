@@ -53,6 +53,8 @@
             this.cbP2Prox = new System.Windows.Forms.CheckBox();
             this.cbP1Prox = new System.Windows.Forms.CheckBox();
             this.bAbout = new System.Windows.Forms.Button();
+            this.labelShowInfo = new System.Windows.Forms.Label();
+            this.cbShowInfo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // labelP1
@@ -192,7 +194,7 @@
             // lbBoxes
             // 
             this.lbBoxes.FormattingEnabled = true;
-            this.lbBoxes.Location = new System.Drawing.Point(15, 102);
+            this.lbBoxes.Location = new System.Drawing.Point(15, 119);
             this.lbBoxes.Name = "lbBoxes";
             this.lbBoxes.Size = new System.Drawing.Size(57, 134);
             this.lbBoxes.TabIndex = 17;
@@ -200,14 +202,14 @@
             // lbAddedBoxes
             // 
             this.lbAddedBoxes.FormattingEnabled = true;
-            this.lbAddedBoxes.Location = new System.Drawing.Point(135, 102);
+            this.lbAddedBoxes.Location = new System.Drawing.Point(135, 119);
             this.lbAddedBoxes.Name = "lbAddedBoxes";
             this.lbAddedBoxes.Size = new System.Drawing.Size(57, 134);
             this.lbAddedBoxes.TabIndex = 18;
             // 
             // bAdd
             // 
-            this.bAdd.Location = new System.Drawing.Point(78, 141);
+            this.bAdd.Location = new System.Drawing.Point(78, 158);
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(51, 23);
             this.bAdd.TabIndex = 19;
@@ -218,7 +220,7 @@
             // bRemove
             // 
             this.bRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bRemove.Location = new System.Drawing.Point(78, 170);
+            this.bRemove.Location = new System.Drawing.Point(78, 187);
             this.bRemove.Name = "bRemove";
             this.bRemove.Size = new System.Drawing.Size(51, 23);
             this.bRemove.TabIndex = 20;
@@ -229,7 +231,7 @@
             // cbVsync
             // 
             this.cbVsync.AutoSize = true;
-            this.cbVsync.Location = new System.Drawing.Point(17, 242);
+            this.cbVsync.Location = new System.Drawing.Point(17, 259);
             this.cbVsync.Name = "cbVsync";
             this.cbVsync.Size = new System.Drawing.Size(55, 17);
             this.cbVsync.TabIndex = 21;
@@ -240,7 +242,7 @@
             // cbSteam
             // 
             this.cbSteam.AutoSize = true;
-            this.cbSteam.Location = new System.Drawing.Point(100, 242);
+            this.cbSteam.Location = new System.Drawing.Point(100, 259);
             this.cbSteam.Name = "cbSteam";
             this.cbSteam.Size = new System.Drawing.Size(94, 17);
             this.cbSteam.TabIndex = 22;
@@ -279,7 +281,7 @@
             // 
             // bAbout
             // 
-            this.bAbout.Location = new System.Drawing.Point(64, 265);
+            this.bAbout.Location = new System.Drawing.Point(64, 282);
             this.bAbout.Name = "bAbout";
             this.bAbout.Size = new System.Drawing.Size(75, 23);
             this.bAbout.TabIndex = 26;
@@ -287,11 +289,32 @@
             this.bAbout.UseVisualStyleBackColor = true;
             this.bAbout.Click += new System.EventHandler(this.bAbout_Click);
             // 
+            // labelShowInfo
+            // 
+            this.labelShowInfo.AutoSize = true;
+            this.labelShowInfo.Location = new System.Drawing.Point(12, 90);
+            this.labelShowInfo.Name = "labelShowInfo";
+            this.labelShowInfo.Size = new System.Drawing.Size(89, 13);
+            this.labelShowInfo.TabIndex = 27;
+            this.labelShowInfo.Text = "Show Information";
+            // 
+            // cbShowInfo
+            // 
+            this.cbShowInfo.AutoSize = true;
+            this.cbShowInfo.Location = new System.Drawing.Point(157, 90);
+            this.cbShowInfo.Name = "cbShowInfo";
+            this.cbShowInfo.Size = new System.Drawing.Size(15, 14);
+            this.cbShowInfo.TabIndex = 28;
+            this.cbShowInfo.UseVisualStyleBackColor = true;
+            this.cbShowInfo.CheckedChanged += new System.EventHandler(this.cbShowInfo_CheckedChanged);
+            // 
             // settingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(204, 289);
+            this.ClientSize = new System.Drawing.Size(204, 310);
+            this.Controls.Add(this.cbShowInfo);
+            this.Controls.Add(this.labelShowInfo);
             this.Controls.Add(this.bAbout);
             this.Controls.Add(this.cbP2Prox);
             this.Controls.Add(this.cbP1Prox);
@@ -320,7 +343,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "settingsForm";
-            this.Text = "SF4 Box Viewer v0.1";
+            this.Text = "SF4 Box Viewer v0.11";
             this.Load += new System.EventHandler(this.settingsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -353,5 +376,7 @@
         private System.Windows.Forms.CheckBox cbP2Prox;
         private System.Windows.Forms.CheckBox cbP1Prox;
         private System.Windows.Forms.Button bAbout;
+        private System.Windows.Forms.Label labelShowInfo;
+        private System.Windows.Forms.CheckBox cbShowInfo;
     }
 }

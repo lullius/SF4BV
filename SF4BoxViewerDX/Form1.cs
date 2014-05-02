@@ -241,7 +241,12 @@ namespace SF4BoxViewerDX
             {
                 drawProxBox(2);
             }
-        
+
+            if (Properties.Settings.Default.showInfo)
+            {
+                drawInfo();
+            }
+
             try
             {
                 device.EndScene();
@@ -348,7 +353,7 @@ namespace SF4BoxViewerDX
             {
                 grab = readMemory.readMemoryAOB(0x0080F0CC + readMemory.steamoffset, new int[] { 0xc, 0x128, 0x0, 0x0, 0x0 }, 0xad); //grab box P2
             }
-            DrawBoxFromArrayOnHit(grab, 0x0, getColor("green"));
+            DrawBoxFromArrayOnHit(grab, 0x0, getColor("blue"));
         }
 
         public void drawProxBox(int player) //Draw the proximity box
@@ -660,6 +665,53 @@ namespace SF4BoxViewerDX
             hitbox.z4 = System.BitConverter.ToSingle(array, startindex + 0x38);
 
             return hitbox;
+        }
+
+        public void drawInfo()
+        {
+            try
+            {
+                using (SlimDX.Direct3D9.Font font = new SlimDX.Direct3D9.Font(device, new System.Drawing.Font(FontFamily.GenericSansSerif, 24)))
+                {
+                    //P1
+                    font.DrawString(null, readMemory.getP1Health().ToString(), this.Width / 6, this.Height / 6, Color.Maroon);
+                    font.DrawString(null, readMemory.getStun(1).ToString(), this.Width / 3, this.Height / 5, Color.Maroon);
+                    font.DrawString(null, readMemory.getP1UltraMeter().ToString(), this.Width / 40, this.Height / 6 * 5, Color.Maroon);
+                    font.DrawString(null, readMemory.getP1EXmeter().ToString(), this.Width / 3, this.Height / 5 * 4, Color.Maroon);
+
+                    font.DrawString(null, "PosX = " + readMemory.getP1PosX().ToString(), this.Width / 6, 30, Color.Maroon);
+                    font.DrawString(null, "PosY = " + readMemory.getP1PosY().ToString(), this.Width / 6, 55, Color.Maroon);
+
+                    font.DrawString(null, "Animation# = " + readMemory.playerAnim(1).ToString(), this.Width / 40, this.Height / 20 * 9, Color.Maroon);
+                    font.DrawString(null, "Frame# = " + readMemory.getAnimFrameP1().ToString(), this.Width / 40, this.Height / 20 * 10, Color.Maroon);
+
+
+
+                    //P2
+                    font.DrawString(null, readMemory.getP2Health().ToString(), (this.Width / 9) * 7, this.Height / 6, Color.Maroon);
+                    font.DrawString(null, readMemory.getStun(2).ToString(), (this.Width / 3) * 2, this.Height / 5, Color.Maroon);
+                    font.DrawString(null, readMemory.getP2UltraMeter().ToString(), this.Width / 20 * 19, this.Height / 6 * 5, Color.Maroon);
+                    font.DrawString(null, readMemory.getP1EXmeter().ToString(), this.Width / 8 * 5, this.Height / 5 * 4, Color.Maroon);
+
+                    font.DrawString(null, "PosX = " + readMemory.getP2PosX().ToString(), this.Width / 7 * 5, 30, Color.Maroon);
+                    font.DrawString(null, "PosY = " + readMemory.getP2PosY().ToString(), this.Width / 7 * 5, 55, Color.Maroon);
+
+                    font.DrawString(null, "Animation# = " + readMemory.playerAnim(2).ToString(), this.Width / 40 * 32, this.Height / 20 * 9, Color.Maroon);
+                    font.DrawString(null, "Frame# = " + readMemory.getAnimFrameP2().ToString(), this.Width / 40 * 32, this.Height / 20 * 10, Color.Maroon);
+
+
+                    //Both
+                    font.DrawString(null, "Combo = " + readMemory.ComboCounter().ToString(), this.Width / 20*9, 30, Color.Maroon);
+                    font.DrawString(null, "Distance = " + readMemory.getDistance().ToString(), this.Width / 20 * 8, this.Height /20 * 18, Color.Maroon);
+
+
+
+                }
+            }
+            catch 
+            { 
+            
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

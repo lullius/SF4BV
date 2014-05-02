@@ -56,6 +56,7 @@ namespace SF4BoxViewerDX
             cbP1Basic.Checked = Properties.Settings.Default.P1Basic;
             cbP2Basic.Checked = Properties.Settings.Default.P2Basic;
 
+            cbShowInfo.Checked = Properties.Settings.Default.showInfo;
 
 
             cbVsync.Checked = Properties.Settings.Default.vsync;
@@ -186,6 +187,12 @@ namespace SF4BoxViewerDX
         {
             about about = new about();
             about.ShowDialog();
+        }
+
+        private void cbShowInfo_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.showInfo = cbShowInfo.Checked;
+            Properties.Settings.Default.Save();  
         }
     }
 }

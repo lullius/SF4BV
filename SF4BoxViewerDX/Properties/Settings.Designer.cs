@@ -166,5 +166,17 @@ namespace SF4BoxViewerDX.Properties {
                 this["P2Basic"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool showInfo {
+            get {
+                return ((bool)(this["showInfo"]));
+            }
+            set {
+                this["showInfo"] = value;
+            }
+        }
     }
 }

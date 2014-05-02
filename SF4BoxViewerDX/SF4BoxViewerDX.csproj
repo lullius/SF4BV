@@ -35,8 +35,9 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MemoryEditor">
-      <HintPath>..\..\MemoryEditor\MemoryEditor\bin\Release\MemoryEditor.dll</HintPath>
+    <Reference Include="MemoryEditor, Version=1.0.0.4, Culture=neutral, PublicKeyToken=785f9f910c61b984, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SF4Bot2\SF4Bot2\bin\Debug\MemoryEditor.dll</HintPath>
     </Reference>
     <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
