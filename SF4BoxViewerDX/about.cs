@@ -19,7 +19,7 @@ namespace SF4BoxViewerDX
 
         private void about_Load(object sender, EventArgs e)
         {
-            label1.Text = "SF4 Box Viewer v0.1" + Environment.NewLine + "Author: Lullius" + Environment.NewLine + "Homepage: www.slitherware.com";
+            label1.Text = "SF4 Box Viewer v0.12" + Environment.NewLine + "Author: Lullius" + Environment.NewLine + "Homepage: www.slitherware.com";
         }
 
         private void bVisit_Click(object sender, EventArgs e)
@@ -30,6 +30,11 @@ namespace SF4BoxViewerDX
         private void bDonate_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8GAGSQNCQP6M4");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

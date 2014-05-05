@@ -340,5 +340,100 @@ namespace SF4BoxViewerDX
             return System.BitConverter.ToInt16(anim, 0);         
         }
 
+        public static void setXlive(bool set)                  //Kill xlive (true = xlive enabled, false = disabled)
+        {
+            int address = 0xF1605;                      //xlive.dll + 0xf1605 is the address of the start of the function we want to jump
+            byte killbyte = 0xeb;
+            byte restorebyte = 0x74;        
+                if (set)
+                {
+                    Memory.Write(Memory.BaseAddress("xlive.dll") + address, restorebyte);
+                }
+                else
+                {
+                    Memory.Write(Memory.BaseAddress("xlive.dll") + address, killbyte);
+                }          
+        }
+
+        public static bool paused = false;
+        public static void PauseGame(bool pause)        //NOP's the pause function and sets the pause state to 1 if true, opposite if false. Leads to crashes!
+        {
+            int ipause = 0;
+           // byte[] original = new byte[6] { 0x09, 0x81, 0x24, 0x13, 0x00, 0x00 }; //the original function
+            byte[] original1 = new byte[6] { 0x21, 0x81, 0x24, 0x13, 0x00, 0x00 }; //the original function
+           // int pauseFuncAddress = 0x005CCD56; //0x005CCD68
+            int pauseFuncAddress1 = 0x005CCD68; //Original
+            
+
+            if (pause)              //if paused, nop the func
+            {
+                ipause = 1;
+                //     setXlive(false); //Disable xlive //UNCOMMENT THIS TO MAKE IT WORK AFTER USER HAS PRESSED PAUSE. MAKES THE GAME CRASH MORE OFTEN
+                paused = true;
+             //   NOP(pauseFuncAddress + steamoffset, 6);
+                //      NOP(pauseFuncAddress1 + steamoffset, 6); //UNCOMMENT THIS TO MAKE IT WORK AFTER USER HAS PRESSED PAUSE. MAKES THE GAME CRASH MORE OFTEN
+            }
+            else                    //else restore it
+            {
+                //     setXlive(true); // reenable xlive //UNCOMMENT THIS TO MAKE IT WORK AFTER USER HAS PRESSED PAUSE. MAKES THE GAME CRASH MORE OFTEN
+                paused = false;
+              //  writeBytes(pauseFuncAddress + steamoffset, original);
+          //      writeBytes(pauseFuncAddress1 + steamoffset, original1);    //UNCOMMENT THIS TO MAKE IT WORK AFTER USER HAS PRESSED PAUSE. MAKES THE GAME CRASH MORE OFTEN
+            }
+            
+            Memory.Write(Memory.BaseAddress() + 0x810394 + steamoffset, ipause); //Set the new pause state
+        }
+
+        public static void setPauseState(int ipause)  //Only works if the pausefunc is already NOP'd
+        {
+            Memory.Write(Memory.BaseAddress() + 0x810394 + steamoffset, ipause);
+        }
+
+
+        public static void NOP(int address, int bytes)
+        {
+            byte NOPbyte = 0x90;
+            /*                                          //this is done elsewhere for this particular function
+            if (Properties.Settings.Default.Steam)
+            {
+                address += 0x10c0;
+            }
+            */
+        
+                for (int i = 0; i < bytes; i++)
+                {
+                    Memory.Write(address + i, NOPbyte);
+                }        
+        }
+
+        public static void writeBytes(int startaddress, byte[] bytes)
+        {/*                                         //this is done elsewhere for this particular function
+            if (Properties.Settings.Default.Steam)
+            {
+                startaddress += 0x10c0;
+            }*/
+
+          
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    Memory.Write(startaddress + i, bytes[i]);
+                }           
+        }
+
+        public static void WaitFrames(int framesToWait)               //Waits specified amount of frames.
+        {
+            int frames;
+            int address = 0x80f0d0 + steamoffset;
+     
+                frames = Convert.ToInt32(Memory.ReadInt(Memory.BaseAddress() + address, new int[] { 0x1c4 }));
+                int finalFrame = frames + framesToWait;
+             
+                while (frames < finalFrame)
+                {
+                    frames = Convert.ToInt32(Memory.ReadInt(Memory.BaseAddress() + address, new int[] { 0x1c4 }));
+                }
+        }
+
+   
     }
 }

@@ -55,6 +55,8 @@
             this.bAbout = new System.Windows.Forms.Button();
             this.labelShowInfo = new System.Windows.Forms.Label();
             this.cbShowInfo = new System.Windows.Forms.CheckBox();
+            this.bPause = new System.Windows.Forms.Button();
+            this.bNextFrame = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelP1
@@ -281,7 +283,7 @@
             // 
             // bAbout
             // 
-            this.bAbout.Location = new System.Drawing.Point(64, 282);
+            this.bAbout.Location = new System.Drawing.Point(64, 314);
             this.bAbout.Name = "bAbout";
             this.bAbout.Size = new System.Drawing.Size(75, 23);
             this.bAbout.TabIndex = 26;
@@ -308,11 +310,33 @@
             this.cbShowInfo.UseVisualStyleBackColor = true;
             this.cbShowInfo.CheckedChanged += new System.EventHandler(this.cbShowInfo_CheckedChanged);
             // 
+            // bPause
+            // 
+            this.bPause.Location = new System.Drawing.Point(15, 282);
+            this.bPause.Name = "bPause";
+            this.bPause.Size = new System.Drawing.Size(75, 23);
+            this.bPause.TabIndex = 29;
+            this.bPause.Text = "Pause";
+            this.bPause.UseVisualStyleBackColor = true;
+            this.bPause.Click += new System.EventHandler(this.bPause_Click);
+            // 
+            // bNextFrame
+            // 
+            this.bNextFrame.Location = new System.Drawing.Point(117, 282);
+            this.bNextFrame.Name = "bNextFrame";
+            this.bNextFrame.Size = new System.Drawing.Size(75, 23);
+            this.bNextFrame.TabIndex = 30;
+            this.bNextFrame.Text = "Next Frame";
+            this.bNextFrame.UseVisualStyleBackColor = true;
+            this.bNextFrame.Click += new System.EventHandler(this.bNextFrame_Click);
+            // 
             // settingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(204, 310);
+            this.ClientSize = new System.Drawing.Size(204, 345);
+            this.Controls.Add(this.bNextFrame);
+            this.Controls.Add(this.bPause);
             this.Controls.Add(this.cbShowInfo);
             this.Controls.Add(this.labelShowInfo);
             this.Controls.Add(this.bAbout);
@@ -343,7 +367,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "settingsForm";
-            this.Text = "SF4 Box Viewer v0.11";
+            this.Text = "SF4 Box Viewer v0.12";
             this.Load += new System.EventHandler(this.settingsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -378,5 +402,7 @@
         private System.Windows.Forms.Button bAbout;
         private System.Windows.Forms.Label labelShowInfo;
         private System.Windows.Forms.CheckBox cbShowInfo;
+        private System.Windows.Forms.Button bPause;
+        private System.Windows.Forms.Button bNextFrame;
     }
 }

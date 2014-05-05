@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace SF4BoxViewerDX
 {
@@ -27,8 +28,37 @@ namespace SF4BoxViewerDX
             lbAddedBoxes.Sorted = true;
             lbBoxes.Sorted = true;
 
+
         }
-       
+
+        //Below are for hotkeys
+
+        [DllImport("user32.dll")]
+        public static extern bool RegisterHotKey(IntPtr hWnd,
+          int id, int fsModifiers, int vlc);
+        [DllImport("user32.dll")]
+        public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+
+
+
+
+        protected override void WndProc(ref Message m)
+        {
+            int id = m.WParam.ToInt32();
+            if (m.Msg == 0x0312)
+
+                if (id == 0)
+                {
+                    bPause.PerformClick();
+                }
+                else if (id == 1)
+                {
+                    bNextFrame.PerformClick();
+                }
+            base.WndProc(ref m);
+        }
+
+        //Above are for hotkeys
         
         
 
@@ -71,7 +101,8 @@ namespace SF4BoxViewerDX
 
         private void settingsForm_Load(object sender, EventArgs e)
         {
-
+            RegisterHotKey(this.Handle, 0, 0, (int)Keys.Tab);            //hotkey for pause
+            RegisterHotKey(this.Handle, 1, 2, (int)Keys.Tab);             //for next frame
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -193,6 +224,34 @@ namespace SF4BoxViewerDX
         {
             Properties.Settings.Default.showInfo = cbShowInfo.Checked;
             Properties.Settings.Default.Save();  
+        }
+
+        private void bPause_Click(object sender, EventArgs e)
+        {
+            if (readMemory.paused == false)
+            {
+                readMemory.PauseGame(true);
+                bPause.Text = "Unpause";
+            }
+            else
+            {
+                readMemory.PauseGame(false);
+                bPause.Text = "Pause";
+            }
+        }
+
+        private void bNextFrame_Click(object sender, EventArgs e)
+        {
+            if (readMemory.paused)
+            {
+                readMemory.setPauseState(0);
+                readMemory.WaitFrames(1);
+                readMemory.setPauseState(1);
+            }
+            else
+            {
+                MessageBox.Show("This function is only available while the pause function is activated.", "Next Frame function not available", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
